@@ -18,6 +18,12 @@ class TranslationText {
 	
 	/**
 	 * 
+	 * @var \TYPO3\Translation\Domain\Model\Translation
+	 * @ORM\ManyToOne(inversedBy="texts")
+	 */
+	protected $translation;
+	/**
+	 * 
 	 * @var string
 	 */
 	protected $text;

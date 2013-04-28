@@ -18,13 +18,15 @@ class Demo {
 
 	/**
 	 * 
-	 * @var \TYPO3\Translation\Translation
+	 * @var \TYPO3\Translation\Domain\Model\Translation
+	 * @ORM\OneToOne
 	 */
 	protected $title;
 	
 	/**
 	 * 
-	 * @var \TYPO3\Translation\Translation
+	 * @var \TYPO3\Translation\Domain\Model\Translation
+	 * @ORM\OneToOne
 	 */
 	protected $text;
 	

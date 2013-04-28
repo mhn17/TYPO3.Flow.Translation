@@ -16,6 +16,12 @@ use TYPO3\Flow\Annotations as Flow;
 class DemoController extends \TYPO3\Flow\Mvc\Controller\ActionController {
 
 	/**
+     * @var \TYPO3\Translation\Domain\Repository\DemoRepository
+     * @Flow\Inject
+     */
+    protected $demoRepository;
+	
+	/**
 	 * Index action
 	 *
 	 * @return void
@@ -33,6 +39,8 @@ class DemoController extends \TYPO3\Flow\Mvc\Controller\ActionController {
 		
 		echo $demo->getTitle() . '<br>' . $demo->getText() . '<br><hr><br>';
 		echo $demo->getTitle('en') . '<br>' . $demo->getText('en') . '<br><hr><br>';
+		
+		$this->demoRepository->add($demo);
 	}
 
 }

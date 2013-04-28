@@ -21,6 +21,7 @@ class Translation {
 	 * Colollection for the translated texts
 	 * 
 	 * @var \Doctrine\Common\Collections\Collection<\TYPO3\Translation\Domain\Model\TranslationText>
+	 * @ORM\OneToMany(mappedBy="translation")
 	 */
 	protected $texts;
 	
@@ -34,8 +35,10 @@ class Translation {
 	 * Constructor
 	 *  - initialises the ArrayCollection for the translated texts
 	 */
-	public function __construct() {
+	public function __construct($text = '', $language = NULL) {
 		$this->texts = new \Doctrine\Common\Collections\ArrayCollection();
+		
+		$this->setTranslation($text, $language);
 	}
 
 	/**
