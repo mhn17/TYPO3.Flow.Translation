@@ -1,0 +1,8 @@
+-
+  name: 'Demo index'
+  uriPattern:    'translation/demo'
+  defaults:
+    '@package':    'TYPO3.Blog'
+    '@controller': 'Demo'
+    '@action':     'index'
+    '@format':     'html'
